@@ -47,6 +47,10 @@ $(document).ready(function() {
 		console.log("home");
 	});
 
+	// $("#clear").on("click", function(e) {
+	// 	savedMovies = [];
+	// });
+
 	function getMovies(movies) {
 		var movieArray = [];
 		console.log(movies);
@@ -85,6 +89,12 @@ $(document).ready(function() {
 		return $("#to-watch").append(savedMovies);
 
 	})
+
+	$("#clear").on("click", function(e) {
+		savedMovies = [];
+		$("#to-watch").html("");
+
+	});
 
 
 
