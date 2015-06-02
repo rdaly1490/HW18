@@ -45,13 +45,7 @@ $(document).ready(function() {
 	$("#go-back").on("click", function(e) {
 		myRouter.navigate("home", {trigger: true});
 		console.log("home");
-		// $("#display-results").html("");
-
-
-
 	});
-
-	// var movieArray = [];
 
 	function getMovies(movies) {
 		var movieArray = [];
@@ -77,16 +71,22 @@ $(document).ready(function() {
 
 	}
 
-// var returnString = [];
-
 	function moviePosters(movies) {
-		// var returnString = [];
-		// console.log(returnString);
-		// console.log(movies.Poster);
-		// "<img src="+movies.Poster+">";
-		return $("#display-results").append("<img src="+movies.Poster+">");
 
+		return $("#display-results").append("<img src="+movies.Poster+">");
 	}
+
+	var savedMovies = [];
+
+	$("#display-results").on("click", function(e) {
+		var $clicked = $(e.target);
+		savedMovies.push($clicked);
+		console.log(savedMovies);
+		return $("#to-watch").append(savedMovies);
+
+	})
+
+
 
 
 });
