@@ -7,13 +7,13 @@ $(document).ready(function() {
 		},
 
 		home: function() {
-			console.log("home");
+			// console.log("home");
 			$(".page").hide();
 			$("#home").show();
 		},
 
 		search: function(query) {
-			console.log("search", query);
+			// console.log("search", query);
 			$(".page").hide();
 			$("#search").show();
 		}
@@ -23,9 +23,10 @@ $(document).ready(function() {
 	Backbone.history.start();
 
 	$("#search-form").on("submit", function(e) {
+		var movieObj = {};
 		e.preventDefault();
 		var query = $("#query").val();
-		console.log(query);
+		// console.log(query);
 		myRouter.navigate("search/"+query, {trigger: true});
 		$.get(
 			"http://www.omdbapi.com/",
@@ -44,14 +45,26 @@ $(document).ready(function() {
 		console.log("home")
 	});
 
+	var movieArray = [];
 
 	function getMovies(movies) {
 		console.log(movies);
-
+		var returnString = "<ul>"
 		for (var i = 0; i<movies.Search.length; i++) {
+			console.log(movies.Search[i]);
 			console.log(movies.Search[i].Title);
+			returnString += "<li>"+movies.Search[i].Title+"</li>"
+			// $("#search").html(movies.Search[i].Title);
+			// movieArray.push(movies.Search[i]);
 		}
+		returnString += "</ul>"
+		console.log(returnString);
+		return $("#search").html(returnString);
 
+	}
+
+	function displayMovies(movies) {
+		
 	}
 
 
