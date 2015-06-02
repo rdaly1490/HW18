@@ -45,6 +45,7 @@ $(document).ready(function() {
 	$("#go-back").on("click", function(e) {
 		myRouter.navigate("home", {trigger: true});
 		console.log("home");
+		$("#query").val("");
 	});
 
 	// $("#clear").on("click", function(e) {
