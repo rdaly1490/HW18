@@ -49,22 +49,34 @@ $(document).ready(function() {
 
 	function getMovies(movies) {
 		console.log(movies);
-		var returnString = "<ul>"
+		// var returnString = "<ul>"
 		for (var i = 0; i<movies.Search.length; i++) {
-			console.log(movies.Search[i]);
-			console.log(movies.Search[i].Title);
-			returnString += "<li>"+movies.Search[i].Title+"</li>"
-			// $("#search").html(movies.Search[i].Title);
-			// movieArray.push(movies.Search[i]);
+			console.log(JSON.stringify(movies.Search[i]));
+			movieArray.push(movies.Search[i].imdbID);	
+			// console.log(movies.Search[i].Title);
+			// returnString += "<li>"+movies.Search[i].Title+"</li>"
 		}
-		returnString += "</ul>"
-		console.log(returnString);
-		return $("#search").html(returnString);
+		console.log(movieArray);
+		for (var i = 0; i<movieArray.length; i++) {
+			$.get("http://www.omdbapi.com/",
+				{
+					i: movieArray[i]
+				},
+				moviePosters,
+				"json"
+				);
 
+		}
+		// returnString += "</ul>"
+		// console.log(returnString);
+		// return $("#search").html(returnString);
 	}
-
-	function displayMovies(movies) {
-		
+returnString = "";
+	function moviePosters(movies) {
+		console.log(movies.Poster);
+		returnString += "<img src="+movies.Poster+">";
+		return $("#search").html(returnString);
+		// returnString += '<div style="background: url("'+movies.Poster+")>"+movies.Poster+"</div>";
 	}
 
 

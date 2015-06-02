@@ -17,3 +17,9 @@ div {
 	height:200px;
 	background-color: blue;
 }
+
+img {
+	width:250px;
+	height:250px;
+	/*background-color: blue;*/
+}
