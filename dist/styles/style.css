@@ -4,29 +4,42 @@
 	height:1800px;
 	margin-left: auto;
 	margin-right: auto;
-	border: 2px solid black;
+	border: 2px solid #e8ddcb;
 }
 
 #search h1 {
 	margin-left: 50px;
+	color:#e8ddcb;
+}
+
+#search h3 {
+	margin-left: 50px;
+	color: #e8ddcb;
 }
 
 #search {
 	width:100%;
-	height:2000px;
-	background-color: red;
+	height:2500px;
+	background-color: #033649;
 	padding-top: 50px;
 }
 
 #home {
 	width:100%;
-	height:2000px;
-	background-color: red;
+	height:2500px;
+	background-color: #033649;
 	padding-top: 50px;
+	color:#e8ddcb;
 }
 
 #home h1 {
 	margin-left: 50px;
+}
+
+#home h2 {
+	margin-left: 50px;
+	margin-left: 40%;
+	text-decoration: underline;
 }
 
 #home form {
@@ -40,6 +53,8 @@
 	height:40px;
 	font-weight: bold;
 	border-radius: 20px;
+	background-color: #cdb380;
+	color:#033649;
 }
 
 #search-btn {
@@ -48,6 +63,8 @@
 	height:40px;
 	font-weight: bold;
 	border-radius: 5px;
+	background-color: #cdb380;
+	color:#033649;
 }
 
 #go-back {
@@ -56,12 +73,16 @@
 	height:40px;
 	font-weight: bold;
 	border-radius: 5px;
+	background-color: #cdb380;
+	color:#033649;
 }
 
 #query {
 	height: 30px;
 	width: 200px;
 	font-size: 20px;
+	background-color: #cdb380;
+	color:#033649;
 }
 
 #to-watch {
@@ -70,7 +91,8 @@
 	height:1800px;
 	margin-left: auto;
 	margin-right: auto;
-	border: 2px solid black;
+	border: 2px solid #e8ddcb;
+	margin-top: 10px;
 }
 
 img {
@@ -80,7 +102,7 @@ img {
 	margin-right: 10px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	border: 2px solid white;
+	border: 2px solid #cdb380;
 	-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 	-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
