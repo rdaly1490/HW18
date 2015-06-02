@@ -10,6 +10,7 @@ $(document).ready(function() {
 			// console.log("home");
 			$(".page").hide();
 			$("#home").show();
+			$("#display-results").html("");
 		},
 
 		search: function(query) {
@@ -25,6 +26,7 @@ $(document).ready(function() {
 	$("#search-form").on("submit", function(e) {
 		var movieObj = {};
 		e.preventDefault();
+
 		var query = $("#query").val();
 		// console.log(query);
 		myRouter.navigate("search/"+query, {trigger: true});
@@ -42,19 +44,24 @@ $(document).ready(function() {
 
 	$("#go-back").on("click", function(e) {
 		myRouter.navigate("home", {trigger: true});
-		console.log("home")
+		console.log("home");
+		// $("#display-results").html("");
+
+
+
 	});
 
-	var movieArray = [];
+	// var movieArray = [];
 
 	function getMovies(movies) {
+		var movieArray = [];
 		console.log(movies);
-		// var returnString = "<ul>"
+		$("#display-results").html("");
+
 		for (var i = 0; i<movies.Search.length; i++) {
-			console.log(JSON.stringify(movies.Search[i]));
+			// console.log(JSON.stringify(movies.Search[i]));
 			movieArray.push(movies.Search[i].imdbID);	
-			// console.log(movies.Search[i].Title);
-			// returnString += "<li>"+movies.Search[i].Title+"</li>"
+
 		}
 		console.log(movieArray);
 		for (var i = 0; i<movieArray.length; i++) {
@@ -67,23 +74,22 @@ $(document).ready(function() {
 				);
 
 		}
-		// returnString += "</ul>"
-		// console.log(returnString);
-		// return $("#search").html(returnString);
-	}
-returnString = "";
-	function moviePosters(movies) {
-		console.log(movies.Poster);
-		returnString += "<img src="+movies.Poster+">";
-		return $("#search").html(returnString);
-		// returnString += '<div style="background: url("'+movies.Poster+")>"+movies.Poster+"</div>";
+
 	}
 
+// var returnString = [];
+
+	function moviePosters(movies) {
+		// var returnString = [];
+		// console.log(returnString);
+		// console.log(movies.Poster);
+		// "<img src="+movies.Poster+">";
+		return $("#display-results").append("<img src="+movies.Poster+">");
+
+	}
 
 
 });
-
-
 
 
 
